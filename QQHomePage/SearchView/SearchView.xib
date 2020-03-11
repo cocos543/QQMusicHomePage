@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SearchView">
+            <rect key="frame" x="0.0" y="0.0" width="387" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="音乐馆" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2h0-rN-r60">
+                    <rect key="frame" x="20" y="12" width="65" height="26"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bNx-rP-60I">
+                    <rect key="frame" x="327" y="5" width="40" height="40"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="cIX-XX-zDD"/>
+                        <constraint firstAttribute="width" constant="40" id="nH8-XC-LDo"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kJ-Sj-SwB">
+                    <rect key="frame" x="105" y="10" width="202" height="30"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="V73-hv-lKH"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="bNx-rP-60I" firstAttribute="leading" secondItem="5kJ-Sj-SwB" secondAttribute="trailing" constant="20" id="Nct-uq-fGd"/>
+                <constraint firstItem="2h0-rN-r60" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="WVR-ge-bBR"/>
+                <constraint firstItem="5kJ-Sj-SwB" firstAttribute="leading" secondItem="2h0-rN-r60" secondAttribute="trailing" constant="20" id="ZoC-wM-5KE"/>
+                <constraint firstAttribute="trailing" secondItem="bNx-rP-60I" secondAttribute="trailing" constant="20" id="a6W-a6-mCU"/>
+                <constraint firstItem="5kJ-Sj-SwB" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dBG-dT-Lm7"/>
+                <constraint firstItem="2h0-rN-r60" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="hFe-CD-4Ve"/>
+                <constraint firstItem="bNx-rP-60I" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="hr0-u9-RAK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-94.927536231884062" y="-225.66964285714283"/>
+        </view>
+    </objects>
+</document>

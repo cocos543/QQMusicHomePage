@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-QQHomePage/Pods-QQHomePage-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CCEasyKVO/CCEasyKVO.framework
+${BUILT_PRODUCTS_DIR}/LHPerformanceStatusBar/LHPerformanceStatusBar.framework
+${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework

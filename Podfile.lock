@@ -1,0 +1,24 @@
+PODS:
+  - CCEasyKVO (0.1.0)
+  - LHPerformanceStatusBar (0.1.0)
+  - Masonry (1.1.0)
+
+DEPENDENCIES:
+  - CCEasyKVO
+  - LHPerformanceStatusBar
+  - Masonry
+
+SPEC REPOS:
+  trunk:
+    - CCEasyKVO
+    - LHPerformanceStatusBar
+    - Masonry
+
+SPEC CHECKSUMS:
+  CCEasyKVO: 1aae5d892be60f07b9e5a3591008a4bd3b07a93e
+  LHPerformanceStatusBar: 068e2e40ccfac5be9c8ca2c1545daad92fb9b366
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+
+PODFILE CHECKSUM: bce4fa041fe39f2e9ceb498ce1e162dac513eb73
+
+COCOAPODS: 1.9.0.beta.2

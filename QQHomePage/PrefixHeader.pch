@@ -1,0 +1,53 @@
+//
+//  PrefixHeader.pch
+//  QQHomePage
+//
+//  Created by Cocos on 2020/3/11.
+//  Copyright © 2020 Cocos. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "Masonry.h"
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+// 这里提供几个适配的宏
+#define IS_LANDSPACE UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication.windows[0].windowScene.interfaceOrientation)
+#define SCREEN_WIDTH  (IS_LANDSPACE ? [UIScreen mainScreen].bounds.size.height : [UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT (IS_LANDSPACE ? [UIScreen mainScreen].bounds.size.width : [UIScreen mainScreen].bounds.size.height)
+#define UI(x) UIAdapter(x)
+#define UIRect(x) UIRectAdapter(x)
+// 根据指定机型,返回对应适配比例
+static inline CGFloat UIAdapter(CGFloat x) {
+    CGFloat scale = (414 / SCREEN_WIDTH);
+    return (NSInteger)x / scale;
+}
+
+static inline CGRect UIRectAdapter(CGFloat x, CGFloat y, CGFloat w, CGFloat h) {
+    return CGRectMake(UIAdapter(x), UIAdapter(y), UIAdapter(w), UIAdapter(h));
+}
+
+#define IS_IPHONE_X_XR_MAX (IS_IPHONE_XS || IS_IPHONE_XR || IS_IPHONE_MAX)
+#define IS_IPHONE_XS (SCREEN_WIDTH == SizeFor58Inch().width && SCREEN_HEIGHT == SizeFor58Inch().height)
+#define IS_IPHONE_XR (SCREEN_WIDTH == SizeFor61Inch().width && SCREEN_HEIGHT == SizeFor61Inch().height && UIScreen.mainScreen.scale == 2)
+#define IS_IPHONE_MAX (SCREEN_WIDTH == SizeFor65Inch().width && SCREEN_HEIGHT == SizeFor65Inch().height && UIScreen.mainScreen.scale == 3)
+#define STATUS_BAR_HEIGHT IS_IPHONE_X_XR_MAX ? 44 : 20
+
+// xs max
+static inline CGSize SizeFor65Inch() {
+    return CGSizeMake(414, 896);
+}
+
+// xr
+static inline CGSize SizeFor61Inch() {
+    return CGSizeMake(414, 896);
+}
+
+// xs
+static inline CGSize SizeFor58Inch() {
+    return CGSizeMake(375, 812);
+}
+
+#endif /* PrefixHeader_pch */

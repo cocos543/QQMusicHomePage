@@ -1,0 +1,6 @@
+framework module Pods_QQHomePage {
+  umbrella header "Pods-QQHomePage-umbrella.h"
+
+  export *
+  module * { export * }
+}
