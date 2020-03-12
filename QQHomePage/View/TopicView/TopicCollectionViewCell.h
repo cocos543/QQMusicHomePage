@@ -1,5 +1,5 @@
 //
-//  FunctionCollectionCell.h
+//  TopicCollectionViewCell.h
 //  QQHomePage
 //
 //  Created by Cocos on 2020/3/12.
@@ -10,7 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FunctionCollectionCell : UICollectionViewCell
+@interface TopicCollectionViewCell : UICollectionViewCell
+
+@property (nonatomic, strong) UILabel *titleLabel;
 
 @end
 
