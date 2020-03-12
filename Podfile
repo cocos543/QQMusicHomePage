@@ -8,4 +8,5 @@ target 'QQHomePage' do
   pod 'LHPerformanceStatusBar'
   pod 'Masonry'
   pod 'CCEasyKVO'
+  pod 'SDWebImage', '~>3.7'
 end

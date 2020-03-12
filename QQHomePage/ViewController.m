@@ -9,8 +9,14 @@
 #import "ViewController.h"
 #import "LHPerformanceMonitorService.h"
 #import "NSObject+CCEasyKVO.h"
-
+#import "TableViewCellModel.h"
 #import "SearchView.h"
+#import "FunctionCell.h"
+
+#import "TableViewSectionModel.h"
+
+#import "SDCycleScrollView.h"
+#import "UIImageView+WebCache.h"
 
 #define SearchHeight 50
 
@@ -18,6 +24,8 @@
     
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic, strong) NSMutableArray<TableViewSectionModel *> *sections;
 
 // 顶部搜索视图
 @property (nonatomic, strong) SearchView *searchView;
@@ -47,6 +55,9 @@
     [self.view addSubview:self.searchView];
     
     [self handleScrollSearchView];
+    [self createCellModel];
+    
+    [self.tableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -54,6 +65,11 @@
     [LHPerformanceMonitorService run];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleDarkContent;
+}
+
+#pragma mark - SearchView animation
 - (void)handleScrollSearchView {
     __weak typeof(self) weakSelf = self;
     [self cc_easyObserve:self.tableView forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew block:^(id  _Nonnull object, NSDictionary<NSKeyValueChangeKey,id> * _Nonnull change) {
@@ -77,18 +93,85 @@
     }];
 }
 
+#pragma Cell Model
+- (void)createCellModel {
+    self.sections = @[].mutableCopy;
+    
+    NSMutableArray *array = @[].mutableCopy;
+    [self.sections addObject:[TableViewSectionModel sectionWithCells:array]];
+    // 第一个Section包含了一个banner视图
+    TableViewCellModel *bannerModel = [[TableViewCellModel alloc] init];
+    [array addObject:bannerModel];
+    // Banner几张图
+    NSMutableArray *images = @[].mutableCopy;
+    // 简单加载一下本地几张图
+    for (int i = 1; i <= 4; i++) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"00%@",@(i)] ofType:@"jpg"];
+        UIImage *img = [UIImage imageWithContentsOfFile:path];
+        if (img) {
+            [images addObject:img];
+        }
+    }
+    
+    bannerModel.reuseIdentifier = @"BannerCell";
+    bannerModel.height = 180;
+    bannerModel.refreshBlock = ^(__kindof UITableViewCell * _Nonnull cell) {
+        cell.backgroundColor = UIColor.clearColor;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        if (cell.contentView.subviews.count == 0) {
+            SDCycleScrollView *view = [[SDCycleScrollView alloc] init];
+            [cell.contentView addSubview:view];
+            [view mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.leading.equalTo(cell.contentView).offset(10);
+                make.bottom.trailing.equalTo(cell.contentView).offset(-10);
+            }];
+            view.localizationImageNamesGroup = images;
+            view.layer.cornerRadius = 10;
+            view.layer.masksToBounds = YES;
+        }
+    };
+    [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:bannerModel.reuseIdentifier];
+    
+    // 第二个section, 展示几个功能图标
+    array = @[].mutableCopy;
+    [self.sections addObject:[TableViewSectionModel sectionWithCells:array]];
+    TableViewCellModel *funcCellModel = [[TableViewCellModel alloc] init];
+    [array addObject:funcCellModel];
+    
+    funcCellModel.height = 100;
+    funcCellModel.reuseIdentifier = @"FuncCell";
+    funcCellModel.refreshBlock = ^(__kindof UITableViewCell * _Nonnull cell) {
+        
+    };
+}
+
 #pragma mark UITableViewDataSource, UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    TableViewCellModel *cellModel = self.sections[indexPath.section].cells[indexPath.row];
+    return cellModel.height;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 100;
+    return self.sections[section].cells.count;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return self.sections.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return self.sections[section].headerHeight + 0.01;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return self.sections[section].footerHeight + 0.01;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.backgroundColor = UIColor.clearColor;
+    TableViewCellModel *cellModel = self.sections[indexPath.section].cells[indexPath.row];;
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellModel.reuseIdentifier forIndexPath:indexPath];
+    cellModel.refreshBlock(cell);
     return cell;
 }
 

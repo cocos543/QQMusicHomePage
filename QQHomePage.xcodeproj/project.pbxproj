@@ -17,6 +17,22 @@
 		ED64BDA72418CCB70022D3C9 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED64BDA52418CCB70022D3C9 /* SceneDelegate.m */; };
 		ED64BDAA2418D10A0022D3C9 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED64BDA92418D10A0022D3C9 /* SearchView.xib */; };
 		ED64BDAD2418E78F0022D3C9 /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED64BDAC2418E78F0022D3C9 /* SearchView.m */; };
+		ED64BDBF2418ECAD0022D3C9 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED64BDB32418ECAD0022D3C9 /* SDCycleScrollView.m */; };
+		ED64BDC02418ECAD0022D3C9 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = ED64BDB42418ECAD0022D3C9 /* UIView+SDExtension.m */; };
+		ED64BDC12418ECAD0022D3C9 /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED64BDB52418ECAD0022D3C9 /* SDCollectionViewCell.m */; };
+		ED64BDC22418ECAD0022D3C9 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED64BDB82418ECAD0022D3C9 /* TADotView.m */; };
+		ED64BDC32418ECAD0022D3C9 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = ED64BDB92418ECAD0022D3C9 /* TAPageControl.m */; };
+		ED64BDC42418ECAD0022D3C9 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED64BDBA2418ECAD0022D3C9 /* TAAnimatedDotView.m */; };
+		ED64BDC52418ECAD0022D3C9 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED64BDBB2418ECAD0022D3C9 /* TAAbstractDotView.m */; };
+		ED64BDC82418ED710022D3C9 /* TableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED64BDC72418ED710022D3C9 /* TableViewCellModel.m */; };
+		ED64BDCC2418F27F0022D3C9 /* TableViewSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED64BDCB2418F27F0022D3C9 /* TableViewSectionModel.m */; };
+		ED64BDD22418F8920022D3C9 /* 002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED64BDCE2418F8910022D3C9 /* 002.jpg */; };
+		ED64BDD32418F8920022D3C9 /* 003.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED64BDCF2418F8910022D3C9 /* 003.jpg */; };
+		ED64BDD42418F8920022D3C9 /* 001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED64BDD02418F8910022D3C9 /* 001.jpg */; };
+		ED64BDD52418F8920022D3C9 /* 004.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED64BDD12418F8920022D3C9 /* 004.jpg */; };
+		ED64BDDD2419DA7E0022D3C9 /* FunctionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED64BDDB2419DA7E0022D3C9 /* FunctionCell.m */; };
+		ED64BDE82419DD3B0022D3C9 /* FunctionCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED64BDE62419DD3B0022D3C9 /* FunctionCollectionCell.m */; };
+		ED64BDE92419DD3B0022D3C9 /* FunctionCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED64BDE72419DD3B0022D3C9 /* FunctionCollectionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +55,33 @@
 		ED64BDA92418D10A0022D3C9 /* SearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		ED64BDAB2418E78F0022D3C9 /* SearchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchView.h; sourceTree = "<group>"; };
 		ED64BDAC2418E78F0022D3C9 /* SearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchView.m; sourceTree = "<group>"; };
+		ED64BDB02418ECAD0022D3C9 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
+		ED64BDB12418ECAD0022D3C9 /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleScrollView.h; sourceTree = "<group>"; };
+		ED64BDB22418ECAD0022D3C9 /* SDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCollectionViewCell.h; sourceTree = "<group>"; };
+		ED64BDB32418ECAD0022D3C9 /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
+		ED64BDB42418ECAD0022D3C9 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
+		ED64BDB52418ECAD0022D3C9 /* SDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCollectionViewCell.m; sourceTree = "<group>"; };
+		ED64BDB72418ECAD0022D3C9 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
+		ED64BDB82418ECAD0022D3C9 /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
+		ED64BDB92418ECAD0022D3C9 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
+		ED64BDBA2418ECAD0022D3C9 /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
+		ED64BDBB2418ECAD0022D3C9 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
+		ED64BDBC2418ECAD0022D3C9 /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
+		ED64BDBD2418ECAD0022D3C9 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
+		ED64BDBE2418ECAD0022D3C9 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
+		ED64BDC62418ED710022D3C9 /* TableViewCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCellModel.h; sourceTree = "<group>"; };
+		ED64BDC72418ED710022D3C9 /* TableViewCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCellModel.m; sourceTree = "<group>"; };
+		ED64BDCA2418F27F0022D3C9 /* TableViewSectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewSectionModel.h; sourceTree = "<group>"; };
+		ED64BDCB2418F27F0022D3C9 /* TableViewSectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewSectionModel.m; sourceTree = "<group>"; };
+		ED64BDCE2418F8910022D3C9 /* 002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 002.jpg; sourceTree = "<group>"; };
+		ED64BDCF2418F8910022D3C9 /* 003.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 003.jpg; sourceTree = "<group>"; };
+		ED64BDD02418F8910022D3C9 /* 001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 001.jpg; sourceTree = "<group>"; };
+		ED64BDD12418F8920022D3C9 /* 004.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 004.jpg; sourceTree = "<group>"; };
+		ED64BDDA2419DA7E0022D3C9 /* FunctionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FunctionCell.h; sourceTree = "<group>"; };
+		ED64BDDB2419DA7E0022D3C9 /* FunctionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FunctionCell.m; sourceTree = "<group>"; };
+		ED64BDE52419DD3B0022D3C9 /* FunctionCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FunctionCollectionCell.h; sourceTree = "<group>"; };
+		ED64BDE62419DD3B0022D3C9 /* FunctionCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FunctionCollectionCell.m; sourceTree = "<group>"; };
+		ED64BDE72419DD3B0022D3C9 /* FunctionCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FunctionCollectionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +134,10 @@
 		ED44E14F2418BEA80063AB7B /* QQHomePage */ = {
 			isa = PBXGroup;
 			children = (
-				ED64BDA82418D0F70022D3C9 /* SearchView */,
+				ED64BDD62419D9550022D3C9 /* View */,
+				ED64BDCD2418F8810022D3C9 /* Resource */,
+				ED64BDC92418ED7A0022D3C9 /* Model */,
+				ED64BDAE2418ECA30022D3C9 /* ThirdLib */,
 				ED44E1502418BEA80063AB7B /* AppDelegate.h */,
 				ED44E1512418BEA80063AB7B /* AppDelegate.m */,
 				ED64BDA62418CCB70022D3C9 /* SceneDelegate.h */,
@@ -116,6 +162,86 @@
 				ED64BDAC2418E78F0022D3C9 /* SearchView.m */,
 			);
 			path = SearchView;
+			sourceTree = "<group>";
+		};
+		ED64BDAE2418ECA30022D3C9 /* ThirdLib */ = {
+			isa = PBXGroup;
+			children = (
+				ED64BDAF2418ECAD0022D3C9 /* SDCycleScrollView */,
+			);
+			path = ThirdLib;
+			sourceTree = "<group>";
+		};
+		ED64BDAF2418ECAD0022D3C9 /* SDCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				ED64BDB02418ECAD0022D3C9 /* UIView+SDExtension.h */,
+				ED64BDB12418ECAD0022D3C9 /* SDCycleScrollView.h */,
+				ED64BDB22418ECAD0022D3C9 /* SDCollectionViewCell.h */,
+				ED64BDB32418ECAD0022D3C9 /* SDCycleScrollView.m */,
+				ED64BDB42418ECAD0022D3C9 /* UIView+SDExtension.m */,
+				ED64BDB52418ECAD0022D3C9 /* SDCollectionViewCell.m */,
+				ED64BDB62418ECAD0022D3C9 /* PageControl */,
+			);
+			path = SDCycleScrollView;
+			sourceTree = "<group>";
+		};
+		ED64BDB62418ECAD0022D3C9 /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				ED64BDB72418ECAD0022D3C9 /* TAAbstractDotView.h */,
+				ED64BDB82418ECAD0022D3C9 /* TADotView.m */,
+				ED64BDB92418ECAD0022D3C9 /* TAPageControl.m */,
+				ED64BDBA2418ECAD0022D3C9 /* TAAnimatedDotView.m */,
+				ED64BDBB2418ECAD0022D3C9 /* TAAbstractDotView.m */,
+				ED64BDBC2418ECAD0022D3C9 /* TADotView.h */,
+				ED64BDBD2418ECAD0022D3C9 /* TAAnimatedDotView.h */,
+				ED64BDBE2418ECAD0022D3C9 /* TAPageControl.h */,
+			);
+			path = PageControl;
+			sourceTree = "<group>";
+		};
+		ED64BDC92418ED7A0022D3C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED64BDC62418ED710022D3C9 /* TableViewCellModel.h */,
+				ED64BDC72418ED710022D3C9 /* TableViewCellModel.m */,
+				ED64BDCA2418F27F0022D3C9 /* TableViewSectionModel.h */,
+				ED64BDCB2418F27F0022D3C9 /* TableViewSectionModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ED64BDCD2418F8810022D3C9 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				ED64BDD02418F8910022D3C9 /* 001.jpg */,
+				ED64BDCE2418F8910022D3C9 /* 002.jpg */,
+				ED64BDCF2418F8910022D3C9 /* 003.jpg */,
+				ED64BDD12418F8920022D3C9 /* 004.jpg */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		ED64BDD62419D9550022D3C9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED64BDD72419D97C0022D3C9 /* CollectionView */,
+				ED64BDA82418D0F70022D3C9 /* SearchView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ED64BDD72419D97C0022D3C9 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				ED64BDDA2419DA7E0022D3C9 /* FunctionCell.h */,
+				ED64BDDB2419DA7E0022D3C9 /* FunctionCell.m */,
+				ED64BDE52419DD3B0022D3C9 /* FunctionCollectionCell.h */,
+				ED64BDE62419DD3B0022D3C9 /* FunctionCollectionCell.m */,
+				ED64BDE72419DD3B0022D3C9 /* FunctionCollectionCell.xib */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,9 +302,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED64BDE92419DD3B0022D3C9 /* FunctionCollectionCell.xib in Resources */,
 				ED64BDAA2418D10A0022D3C9 /* SearchView.xib in Resources */,
 				ED44E1602418BEA90063AB7B /* LaunchScreen.storyboard in Resources */,
+				ED64BDD52418F8920022D3C9 /* 004.jpg in Resources */,
 				ED44E15D2418BEA90063AB7B /* Assets.xcassets in Resources */,
+				ED64BDD42418F8920022D3C9 /* 001.jpg in Resources */,
+				ED64BDD32418F8920022D3C9 /* 003.jpg in Resources */,
+				ED64BDD22418F8920022D3C9 /* 002.jpg in Resources */,
 				ED44E15B2418BEA80063AB7B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,11 +346,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED64BDC02418ECAD0022D3C9 /* UIView+SDExtension.m in Sources */,
+				ED64BDC52418ECAD0022D3C9 /* TAAbstractDotView.m in Sources */,
+				ED64BDC22418ECAD0022D3C9 /* TADotView.m in Sources */,
 				ED44E1582418BEA80063AB7B /* ViewController.m in Sources */,
+				ED64BDBF2418ECAD0022D3C9 /* SDCycleScrollView.m in Sources */,
+				ED64BDE82419DD3B0022D3C9 /* FunctionCollectionCell.m in Sources */,
+				ED64BDC82418ED710022D3C9 /* TableViewCellModel.m in Sources */,
 				ED44E1522418BEA80063AB7B /* AppDelegate.m in Sources */,
 				ED44E1632418BEA90063AB7B /* main.m in Sources */,
 				ED64BDAD2418E78F0022D3C9 /* SearchView.m in Sources */,
+				ED64BDC32418ECAD0022D3C9 /* TAPageControl.m in Sources */,
 				ED64BDA72418CCB70022D3C9 /* SceneDelegate.m in Sources */,
+				ED64BDCC2418F27F0022D3C9 /* TableViewSectionModel.m in Sources */,
+				ED64BDC12418ECAD0022D3C9 /* SDCollectionViewCell.m in Sources */,
+				ED64BDC42418ECAD0022D3C9 /* TAAnimatedDotView.m in Sources */,
+				ED64BDDD2419DA7E0022D3C9 /* FunctionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
