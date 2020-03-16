@@ -16,7 +16,8 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 // 这里提供几个适配的宏
-#define IS_LANDSPACE UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication.windows[0].windowScene.interfaceOrientation)
+#define IS_LANDSPACE UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication.statusBarOrientation)
+
 #define SCREEN_WIDTH  (IS_LANDSPACE ? [UIScreen mainScreen].bounds.size.height : [UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT (IS_LANDSPACE ? [UIScreen mainScreen].bounds.size.width : [UIScreen mainScreen].bounds.size.height)
 #define UI(x) UIAdapter(x)

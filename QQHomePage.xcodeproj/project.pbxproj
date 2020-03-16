@@ -52,6 +52,20 @@
 		ED64BE11241A2E3A0022D3C9 /* UILabel+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = ED64BE10241A2E3A0022D3C9 /* UILabel+Utility.m */; };
 		ED64BE14241A2F380022D3C9 /* UIColor+CCUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = ED64BE12241A2F370022D3C9 /* UIColor+CCUtility.m */; };
 		ED64BE18241A36430022D3C9 /* TopicWalterfallFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ED64BE17241A36430022D3C9 /* TopicWalterfallFlowLayout.m */; };
+		ED64BE4C241F17270022D3C9 /* SongListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED64BE4A241F17270022D3C9 /* SongListCell.m */; };
+		ED64BE4D241F17270022D3C9 /* SongListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED64BE4B241F17270022D3C9 /* SongListCell.xib */; };
+		ED64BE51241F1ADB0022D3C9 /* SongCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED64BE4F241F1ADB0022D3C9 /* SongCollectionViewCell.m */; };
+		ED64BE52241F1ADB0022D3C9 /* SongCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED64BE50241F1ADB0022D3C9 /* SongCollectionViewCell.xib */; };
+		ED64BE55241F2DFD0022D3C9 /* songlist166.json in Resources */ = {isa = PBXBuildFile; fileRef = ED64BE54241F2DFD0022D3C9 /* songlist166.json */; };
+		ED64BE59241F2ECC0022D3C9 /* JsonLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = ED64BE58241F2ECC0022D3C9 /* JsonLoader.m */; };
+		EDAC6EC8241F85340086A081 /* songlist81.json in Resources */ = {isa = PBXBuildFile; fileRef = EDAC6EC7241F85340086A081 /* songlist81.json */; };
+		EDAC6ECA241F8D380086A081 /* mvlist11.json in Resources */ = {isa = PBXBuildFile; fileRef = EDAC6EC9241F8D380086A081 /* mvlist11.json */; };
+		EDAC6ECF241F8DC60086A081 /* MVListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDAC6ECD241F8DC60086A081 /* MVListCell.m */; };
+		EDAC6ED0241F8DC60086A081 /* MVListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDAC6ECE241F8DC60086A081 /* MVListCell.xib */; };
+		EDAC6ED4241F8E440086A081 /* MVCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDAC6ED2241F8E440086A081 /* MVCollectionViewCell.m */; };
+		EDAC6ED5241F8E440086A081 /* MVCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDAC6ED3241F8E440086A081 /* MVCollectionViewCell.xib */; };
+		EDAC6ED8241F90BA0086A081 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDAC6ED7241F90BA0086A081 /* BaseTableViewCell.m */; };
+		EDAC6EDA241F954E0086A081 /* newmvlist.json in Resources */ = {isa = PBXBuildFile; fileRef = EDAC6ED9241F954E0086A081 /* newmvlist.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +140,26 @@
 		ED64BE13241A2F380022D3C9 /* UIColor+CCUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+CCUtility.h"; path = "QQHomePage/Resource/UIColor+CCUtility.h"; sourceTree = SOURCE_ROOT; };
 		ED64BE16241A36430022D3C9 /* TopicWalterfallFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopicWalterfallFlowLayout.h; sourceTree = "<group>"; };
 		ED64BE17241A36430022D3C9 /* TopicWalterfallFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopicWalterfallFlowLayout.m; sourceTree = "<group>"; };
+		ED64BE49241F17270022D3C9 /* SongListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SongListCell.h; sourceTree = "<group>"; };
+		ED64BE4A241F17270022D3C9 /* SongListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SongListCell.m; sourceTree = "<group>"; };
+		ED64BE4B241F17270022D3C9 /* SongListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongListCell.xib; sourceTree = "<group>"; };
+		ED64BE4E241F1ADB0022D3C9 /* SongCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SongCollectionViewCell.h; sourceTree = "<group>"; };
+		ED64BE4F241F1ADB0022D3C9 /* SongCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SongCollectionViewCell.m; sourceTree = "<group>"; };
+		ED64BE50241F1ADB0022D3C9 /* SongCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongCollectionViewCell.xib; sourceTree = "<group>"; };
+		ED64BE54241F2DFD0022D3C9 /* songlist166.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = songlist166.json; sourceTree = "<group>"; };
+		ED64BE57241F2ECC0022D3C9 /* JsonLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JsonLoader.h; sourceTree = "<group>"; };
+		ED64BE58241F2ECC0022D3C9 /* JsonLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JsonLoader.m; sourceTree = "<group>"; };
+		EDAC6EC7241F85340086A081 /* songlist81.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = songlist81.json; sourceTree = "<group>"; };
+		EDAC6EC9241F8D380086A081 /* mvlist11.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mvlist11.json; sourceTree = "<group>"; };
+		EDAC6ECC241F8DC60086A081 /* MVListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVListCell.h; sourceTree = "<group>"; };
+		EDAC6ECD241F8DC60086A081 /* MVListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVListCell.m; sourceTree = "<group>"; };
+		EDAC6ECE241F8DC60086A081 /* MVListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVListCell.xib; sourceTree = "<group>"; };
+		EDAC6ED1241F8E440086A081 /* MVCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVCollectionViewCell.h; sourceTree = "<group>"; };
+		EDAC6ED2241F8E440086A081 /* MVCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVCollectionViewCell.m; sourceTree = "<group>"; };
+		EDAC6ED3241F8E440086A081 /* MVCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVCollectionViewCell.xib; sourceTree = "<group>"; };
+		EDAC6ED6241F90BA0086A081 /* BaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
+		EDAC6ED7241F90BA0086A081 /* BaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
+		EDAC6ED9241F954E0086A081 /* newmvlist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = newmvlist.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +212,7 @@
 		ED44E14F2418BEA80063AB7B /* QQHomePage */ = {
 			isa = PBXGroup;
 			children = (
+				ED64BE56241F2EB30022D3C9 /* Data */,
 				ED64BDD62419D9550022D3C9 /* View */,
 				ED64BDCD2418F8810022D3C9 /* Resource */,
 				ED64BDC92418ED7A0022D3C9 /* Model */,
@@ -259,6 +294,7 @@
 		ED64BDCD2418F8810022D3C9 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				ED64BE53241F2DE40022D3C9 /* json */,
 				ED64BE04241A25D70022D3C9 /* song1.jpg */,
 				ED64BE05241A25D70022D3C9 /* song2.jpg */,
 				ED64BDEB2419EFFE0022D3C9 /* icon001@2x.png */,
@@ -286,6 +322,10 @@
 				ED64BE10241A2E3A0022D3C9 /* UILabel+Utility.m */,
 				ED64BE13241A2F380022D3C9 /* UIColor+CCUtility.h */,
 				ED64BE12241A2F370022D3C9 /* UIColor+CCUtility.m */,
+				EDAC6ED6241F90BA0086A081 /* BaseTableViewCell.h */,
+				EDAC6ED7241F90BA0086A081 /* BaseTableViewCell.m */,
+				EDAC6ECB241F8DA10086A081 /* MVList */,
+				ED64BE46241F16C70022D3C9 /* SongList */,
 				ED64BE08241A29520022D3C9 /* TopicView */,
 				ED64BDFE241A181B0022D3C9 /* UIView */,
 				ED64BDD72419D97C0022D3C9 /* FunctionView */,
@@ -327,6 +367,52 @@
 				ED64BE17241A36430022D3C9 /* TopicWalterfallFlowLayout.m */,
 			);
 			path = TopicView;
+			sourceTree = "<group>";
+		};
+		ED64BE46241F16C70022D3C9 /* SongList */ = {
+			isa = PBXGroup;
+			children = (
+				ED64BE49241F17270022D3C9 /* SongListCell.h */,
+				ED64BE4A241F17270022D3C9 /* SongListCell.m */,
+				ED64BE4B241F17270022D3C9 /* SongListCell.xib */,
+				ED64BE4E241F1ADB0022D3C9 /* SongCollectionViewCell.h */,
+				ED64BE4F241F1ADB0022D3C9 /* SongCollectionViewCell.m */,
+				ED64BE50241F1ADB0022D3C9 /* SongCollectionViewCell.xib */,
+			);
+			path = SongList;
+			sourceTree = "<group>";
+		};
+		ED64BE53241F2DE40022D3C9 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				ED64BE54241F2DFD0022D3C9 /* songlist166.json */,
+				EDAC6EC7241F85340086A081 /* songlist81.json */,
+				EDAC6EC9241F8D380086A081 /* mvlist11.json */,
+				EDAC6ED9241F954E0086A081 /* newmvlist.json */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
+		ED64BE56241F2EB30022D3C9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				ED64BE57241F2ECC0022D3C9 /* JsonLoader.h */,
+				ED64BE58241F2ECC0022D3C9 /* JsonLoader.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		EDAC6ECB241F8DA10086A081 /* MVList */ = {
+			isa = PBXGroup;
+			children = (
+				EDAC6ECC241F8DC60086A081 /* MVListCell.h */,
+				EDAC6ECD241F8DC60086A081 /* MVListCell.m */,
+				EDAC6ECE241F8DC60086A081 /* MVListCell.xib */,
+				EDAC6ED1241F8E440086A081 /* MVCollectionViewCell.h */,
+				EDAC6ED2241F8E440086A081 /* MVCollectionViewCell.m */,
+				EDAC6ED3241F8E440086A081 /* MVCollectionViewCell.xib */,
+			);
+			path = MVList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,9 +479,12 @@
 				ED64BDF62419EFFF0022D3C9 /* icon004@3x.png in Resources */,
 				ED64BDF82419EFFF0022D3C9 /* icon003@2x.png in Resources */,
 				ED64BDAA2418D10A0022D3C9 /* SearchView.xib in Resources */,
+				EDAC6EDA241F954E0086A081 /* newmvlist.json in Resources */,
 				ED64BDF72419EFFF0022D3C9 /* icon001@3x.png in Resources */,
 				ED44E1602418BEA90063AB7B /* LaunchScreen.storyboard in Resources */,
+				EDAC6ED5241F8E440086A081 /* MVCollectionViewCell.xib in Resources */,
 				ED64BDD52418F8920022D3C9 /* 004.jpg in Resources */,
+				EDAC6ECA241F8D380086A081 /* mvlist11.json in Resources */,
 				ED44E15D2418BEA90063AB7B /* Assets.xcassets in Resources */,
 				ED64BE06241A25D70022D3C9 /* song1.jpg in Resources */,
 				ED64BDD42418F8920022D3C9 /* 001.jpg in Resources */,
@@ -404,10 +493,15 @@
 				ED64BDD22418F8920022D3C9 /* 002.jpg in Resources */,
 				ED64BDFA2419EFFF0022D3C9 /* icon003@3x.png in Resources */,
 				ED64BDF42419EFFF0022D3C9 /* icon002@3x.png in Resources */,
+				ED64BE52241F1ADB0022D3C9 /* SongCollectionViewCell.xib in Resources */,
+				ED64BE55241F2DFD0022D3C9 /* songlist166.json in Resources */,
 				ED64BE07241A25D70022D3C9 /* song2.jpg in Resources */,
 				ED44E15B2418BEA80063AB7B /* Main.storyboard in Resources */,
+				EDAC6EC8241F85340086A081 /* songlist81.json in Resources */,
 				ED64BDF92419EFFF0022D3C9 /* icon002@2x.png in Resources */,
 				ED64BDF52419EFFF0022D3C9 /* icon001@2x.png in Resources */,
+				ED64BE4D241F17270022D3C9 /* SongListCell.xib in Resources */,
+				EDAC6ED0241F8DC60086A081 /* MVListCell.xib in Resources */,
 				ED64BDFD2419EFFF0022D3C9 /* icon005@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,6 +540,7 @@
 			files = (
 				ED64BDC02418ECAD0022D3C9 /* UIView+SDExtension.m in Sources */,
 				ED64BE11241A2E3A0022D3C9 /* UILabel+Utility.m in Sources */,
+				EDAC6ECF241F8DC60086A081 /* MVListCell.m in Sources */,
 				ED64BDC52418ECAD0022D3C9 /* TAAbstractDotView.m in Sources */,
 				ED64BDC22418ECAD0022D3C9 /* TADotView.m in Sources */,
 				ED44E1582418BEA80063AB7B /* ViewController.m in Sources */,
@@ -453,12 +548,17 @@
 				ED64BDE82419DD3B0022D3C9 /* FunctionCollectionCell.m in Sources */,
 				ED64BDC82418ED710022D3C9 /* TableViewCellModel.m in Sources */,
 				ED44E1522418BEA80063AB7B /* AppDelegate.m in Sources */,
+				ED64BE51241F1ADB0022D3C9 /* SongCollectionViewCell.m in Sources */,
 				ED44E1632418BEA90063AB7B /* main.m in Sources */,
+				EDAC6ED8241F90BA0086A081 /* BaseTableViewCell.m in Sources */,
 				ED64BDAD2418E78F0022D3C9 /* SearchView.m in Sources */,
 				ED64BE0B241A29A30022D3C9 /* TopicViewCell.m in Sources */,
+				ED64BE59241F2ECC0022D3C9 /* JsonLoader.m in Sources */,
 				ED64BDC32418ECAD0022D3C9 /* TAPageControl.m in Sources */,
 				ED64BE0E241A2D160022D3C9 /* TopicCollectionViewCell.m in Sources */,
 				ED64BE03241A1AE00022D3C9 /* NewSongView.m in Sources */,
+				ED64BE4C241F17270022D3C9 /* SongListCell.m in Sources */,
+				EDAC6ED4241F8E440086A081 /* MVCollectionViewCell.m in Sources */,
 				ED64BDA72418CCB70022D3C9 /* SceneDelegate.m in Sources */,
 				ED64BDCC2418F27F0022D3C9 /* TableViewSectionModel.m in Sources */,
 				ED64BE14241A2F380022D3C9 /* UIColor+CCUtility.m in Sources */,
@@ -541,7 +641,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -593,7 +693,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -610,7 +710,7 @@
 				DEVELOPMENT_TEAM = XNC7CRYM5X;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/QQHomePage/PrefixHeader.pch";
 				INFOPLIST_FILE = QQHomePage/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -630,7 +730,7 @@
 				DEVELOPMENT_TEAM = XNC7CRYM5X;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/QQHomePage/PrefixHeader.pch";
 				INFOPLIST_FILE = QQHomePage/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -15,15 +15,17 @@
 #import "FunctionCell.h"
 #import "NewSongView.h"
 #import "TopicViewCell.h"
-
+#import "SongListCell.h"
+#import "MVListCell.h"
 
 #import "SDCycleScrollView.h"
 #import "UIImageView+WebCache.h"
+#import "JsonLoader.h"
 
 #define SearchHeight 55
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate> {
-}
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) NSMutableArray<TableViewSectionModel *> *sections;
@@ -45,7 +47,7 @@
     self.tableView.delegate     = self;
     self.tableView.dataSource   = self;
     [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"cell"];
-    self.tableView.automaticallyAdjustsScrollIndicatorInsets = NO;
+    
     self.tableView.contentInset = UIEdgeInsetsMake(SearchHeight, 0, 0, 0);
     self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(SearchHeight, 0, 0, 0);
 
@@ -193,16 +195,71 @@
     };
     [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:newSongCellModel.reuseIdentifier];
     
-    // 第4个section, 由一个流式布局的collection view组成
+    // 第4个section, 由一个横向流式布局的collection view组成
     array = @[].mutableCopy;
     [self.sections addObject:[TableViewSectionModel sectionWithCells:array]];
     TableViewCellModel *topicsCellModel = [[TableViewCellModel alloc] init];
     [array addObject:topicsCellModel];
-    topicsCellModel.height = 80;
+    topicsCellModel.height = 85;
     topicsCellModel.reuseIdentifier = @"TopicsCell";
     [self.tableView registerClass:TopicViewCell.class forCellReuseIdentifier:topicsCellModel.reuseIdentifier];
     topicsCellModel.refreshBlock = ^(__kindof UITableViewCell * _Nonnull cell) {
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.backgroundColor = UIColor.clearColor;
+    };
+    
+    // 第5个section, 由一个横向collection view组成, 其中每个cell由多个图片叠加而成
+    array = @[].mutableCopy;
+    [self.sections addObject:[TableViewSectionModel sectionWithCells:array]];
+    // 官方歌单, 歌单有两种高度, 单行标题是201, 双行标题221
+    TableViewCellModel *officialSongListModel = [[TableViewCellModel alloc] init];
+    [array addObject:officialSongListModel];
+    officialSongListModel.height = 211;
+    officialSongListModel.reuseIdentifier = @"SongListCell";
+    [self.tableView registerNib:[UINib nibWithNibName:@"SongListCell" bundle:nil] forCellReuseIdentifier:officialSongListModel.reuseIdentifier];
+    NSArray *json = [JsonLoader jsonObjsWithFileName:@"songlist166.json"];
+    officialSongListModel.refreshBlock = ^(__kindof SongListCell * _Nonnull cell) {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.titleLabel.text = @"官方歌单";
+        UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)cell.collectionView.collectionViewLayout;
+        layout.itemSize = CGSizeMake(115, 160);
+        cell.listJson = json;
+    };
+    
+    // 第6个section, 旅行歌单, 长得和第5个是一样的, 偷懒一下直接把代码抄过来就可以了
+    array = @[].mutableCopy;
+    [self.sections addObject:[TableViewSectionModel sectionWithCells:array]];
+    // 官方歌单, 歌单有两种高度, 单行标题是201, 双行标题221
+    TableViewCellModel *travelSongListModel = [[TableViewCellModel alloc] init];
+    [array addObject:travelSongListModel];
+    travelSongListModel.height = 211;
+    travelSongListModel.reuseIdentifier = @"SongListCell";
+    [self.tableView registerNib:[UINib nibWithNibName:@"SongListCell" bundle:nil] forCellReuseIdentifier:officialSongListModel.reuseIdentifier];
+    NSArray *travelJson = [JsonLoader jsonObjsWithFileName:@"songlist81.json"];
+    travelSongListModel.refreshBlock = ^(__kindof SongListCell * _Nonnull cell) {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.titleLabel.text = @"旅行歌单";
+        [cell updateItemSize:CGSizeMake(115, 160)];
+        cell.listJson = travelJson;
+        [cell.collectionView reloadData];
+    };
+    
+    // 第7个section, 视频专区, 同样是一个横向滚动的collection view, 不过他的cell是一个矩形
+    array = @[].mutableCopy;
+    [self.sections addObject:[TableViewSectionModel sectionWithCells:array]];
+    // 官方歌单, 歌单有两种高度, 单行标题是201, 双行标题221
+    TableViewCellModel *mvListModel = [[TableViewCellModel alloc] init];
+    [array addObject:mvListModel];
+    mvListModel.height = 231;
+    mvListModel.reuseIdentifier = @"MVListCell";
+    [self.tableView registerNib:[UINib nibWithNibName:@"MVListCell" bundle:nil] forCellReuseIdentifier:mvListModel.reuseIdentifier];
+    NSArray *mvJson = [JsonLoader jsonObjsWithFileName:@"mvlist11.json"];
+    mvListModel.refreshBlock = ^(__kindof MVListCell * _Nonnull cell) {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.titleLabel.text = @"歌手专区";
+        [cell updateItemSize:CGSizeMake(230, 160)];
+        cell.listJson = mvJson;
+        [cell.collectionView reloadData];
     };
 }
 

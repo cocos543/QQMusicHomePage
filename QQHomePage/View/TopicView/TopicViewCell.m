@@ -25,7 +25,7 @@
         TopicWalterfallFlowLayout *layout = [[TopicWalterfallFlowLayout alloc] init];
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         layout.itemSize = CGSizeMake(150, 25);
-        layout.sectionInset = UIEdgeInsetsMake(15, 20, 0, 20);
+        layout.sectionInset = UIEdgeInsetsMake(15, 20, 5, 20);
         layout.minimumInteritemSpacing = 0;
         layout.dataSource = self;
         self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout: layout];
