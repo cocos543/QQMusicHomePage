@@ -17,6 +17,11 @@
 		ED63F59F2420A4B600DB0387 /* songlist101.json in Resources */ = {isa = PBXBuildFile; fileRef = ED63F59E2420A4B600DB0387 /* songlist101.json */; };
 		ED63F5A12420A68500DB0387 /* mvlist12.json in Resources */ = {isa = PBXBuildFile; fileRef = ED63F5A02420A68500DB0387 /* mvlist12.json */; };
 		ED63F5A32420A73D00DB0387 /* songlist16.json in Resources */ = {isa = PBXBuildFile; fileRef = ED63F5A22420A73D00DB0387 /* songlist16.json */; };
+		ED63F5A52420B5FC00DB0387 /* viplist.json in Resources */ = {isa = PBXBuildFile; fileRef = ED63F5A42420B5FC00DB0387 /* viplist.json */; };
+		ED63F5AA2420B68900DB0387 /* VipViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED63F5A82420B68900DB0387 /* VipViewCell.m */; };
+		ED63F5AB2420B68900DB0387 /* VipViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED63F5A92420B68900DB0387 /* VipViewCell.xib */; };
+		ED63F5AF2420B74700DB0387 /* VIP1CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED63F5AD2420B74700DB0387 /* VIP1CollectionViewCell.m */; };
+		ED63F5B02420B74700DB0387 /* VIP1CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED63F5AE2420B74700DB0387 /* VIP1CollectionViewCell.xib */; };
 		ED64BDA72418CCB70022D3C9 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED64BDA52418CCB70022D3C9 /* SceneDelegate.m */; };
 		ED64BDAA2418D10A0022D3C9 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED64BDA92418D10A0022D3C9 /* SearchView.xib */; };
 		ED64BDAD2418E78F0022D3C9 /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED64BDAC2418E78F0022D3C9 /* SearchView.m */; };
@@ -89,6 +94,13 @@
 		ED63F59E2420A4B600DB0387 /* songlist101.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = songlist101.json; sourceTree = "<group>"; };
 		ED63F5A02420A68500DB0387 /* mvlist12.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mvlist12.json; sourceTree = "<group>"; };
 		ED63F5A22420A73D00DB0387 /* songlist16.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = songlist16.json; sourceTree = "<group>"; };
+		ED63F5A42420B5FC00DB0387 /* viplist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = viplist.json; sourceTree = "<group>"; };
+		ED63F5A72420B68900DB0387 /* VipViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VipViewCell.h; sourceTree = "<group>"; };
+		ED63F5A82420B68900DB0387 /* VipViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VipViewCell.m; sourceTree = "<group>"; };
+		ED63F5A92420B68900DB0387 /* VipViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VipViewCell.xib; sourceTree = "<group>"; };
+		ED63F5AC2420B74700DB0387 /* VIP1CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VIP1CollectionViewCell.h; sourceTree = "<group>"; };
+		ED63F5AD2420B74700DB0387 /* VIP1CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VIP1CollectionViewCell.m; sourceTree = "<group>"; };
+		ED63F5AE2420B74700DB0387 /* VIP1CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VIP1CollectionViewCell.xib; sourceTree = "<group>"; };
 		ED64BDA52418CCB70022D3C9 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		ED64BDA62418CCB70022D3C9 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		ED64BDA92418D10A0022D3C9 /* SearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
@@ -239,6 +251,19 @@
 			path = QQHomePage;
 			sourceTree = "<group>";
 		};
+		ED63F5A62420B65E00DB0387 /* VipVIew */ = {
+			isa = PBXGroup;
+			children = (
+				ED63F5A72420B68900DB0387 /* VipViewCell.h */,
+				ED63F5A82420B68900DB0387 /* VipViewCell.m */,
+				ED63F5A92420B68900DB0387 /* VipViewCell.xib */,
+				ED63F5AC2420B74700DB0387 /* VIP1CollectionViewCell.h */,
+				ED63F5AD2420B74700DB0387 /* VIP1CollectionViewCell.m */,
+				ED63F5AE2420B74700DB0387 /* VIP1CollectionViewCell.xib */,
+			);
+			path = VipVIew;
+			sourceTree = "<group>";
+		};
 		ED64BDA82418D0F70022D3C9 /* SearchView */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +355,7 @@
 				ED64BE12241A2F370022D3C9 /* UIColor+CCUtility.m */,
 				EDAC6ED6241F90BA0086A081 /* BaseTableViewCell.h */,
 				EDAC6ED7241F90BA0086A081 /* BaseTableViewCell.m */,
+				ED63F5A62420B65E00DB0387 /* VipVIew */,
 				EDAC6ECB241F8DA10086A081 /* MVList */,
 				ED64BE46241F16C70022D3C9 /* SongList */,
 				ED64BE08241A29520022D3C9 /* TopicView */,
@@ -397,6 +423,7 @@
 				ED63F5A22420A73D00DB0387 /* songlist16.json */,
 				EDAC6EC9241F8D380086A081 /* mvlist11.json */,
 				ED63F5A02420A68500DB0387 /* mvlist12.json */,
+				ED63F5A42420B5FC00DB0387 /* viplist.json */,
 				EDAC6ED9241F954E0086A081 /* newmvlist.json */,
 			);
 			path = json;
@@ -486,6 +513,7 @@
 				ED64BDE92419DD3B0022D3C9 /* FunctionCollectionCell.xib in Resources */,
 				ED64BDFC2419EFFF0022D3C9 /* icon005@2x.png in Resources */,
 				ED64BDF62419EFFF0022D3C9 /* icon004@3x.png in Resources */,
+				ED63F5A52420B5FC00DB0387 /* viplist.json in Resources */,
 				ED64BDF82419EFFF0022D3C9 /* icon003@2x.png in Resources */,
 				ED64BDAA2418D10A0022D3C9 /* SearchView.xib in Resources */,
 				EDAC6EDA241F954E0086A081 /* newmvlist.json in Resources */,
@@ -499,6 +527,7 @@
 				ED64BE06241A25D70022D3C9 /* song1.jpg in Resources */,
 				ED64BDD42418F8920022D3C9 /* 001.jpg in Resources */,
 				ED64BDFB2419EFFF0022D3C9 /* icon004@2x.png in Resources */,
+				ED63F5B02420B74700DB0387 /* VIP1CollectionViewCell.xib in Resources */,
 				ED64BDD32418F8920022D3C9 /* 003.jpg in Resources */,
 				ED64BDD22418F8920022D3C9 /* 002.jpg in Resources */,
 				ED64BDFA2419EFFF0022D3C9 /* icon003@3x.png in Resources */,
@@ -512,6 +541,7 @@
 				ED64BDF92419EFFF0022D3C9 /* icon002@2x.png in Resources */,
 				ED64BDF52419EFFF0022D3C9 /* icon001@2x.png in Resources */,
 				ED63F59F2420A4B600DB0387 /* songlist101.json in Resources */,
+				ED63F5AB2420B68900DB0387 /* VipViewCell.xib in Resources */,
 				ED64BE4D241F17270022D3C9 /* SongListCell.xib in Resources */,
 				EDAC6ED0241F8DC60086A081 /* MVListCell.xib in Resources */,
 				ED64BDFD2419EFFF0022D3C9 /* icon005@3x.png in Resources */,
@@ -554,6 +584,7 @@
 				ED64BE11241A2E3A0022D3C9 /* UILabel+Utility.m in Sources */,
 				EDAC6ECF241F8DC60086A081 /* MVListCell.m in Sources */,
 				ED64BDC52418ECAD0022D3C9 /* TAAbstractDotView.m in Sources */,
+				ED63F5AF2420B74700DB0387 /* VIP1CollectionViewCell.m in Sources */,
 				ED64BDC22418ECAD0022D3C9 /* TADotView.m in Sources */,
 				ED44E1582418BEA80063AB7B /* ViewController.m in Sources */,
 				ED64BDBF2418ECAD0022D3C9 /* SDCycleScrollView.m in Sources */,
@@ -562,6 +593,7 @@
 				ED44E1522418BEA80063AB7B /* AppDelegate.m in Sources */,
 				ED64BE51241F1ADB0022D3C9 /* SongCollectionViewCell.m in Sources */,
 				ED44E1632418BEA90063AB7B /* main.m in Sources */,
+				ED63F5AA2420B68900DB0387 /* VipViewCell.m in Sources */,
 				EDAC6ED8241F90BA0086A081 /* BaseTableViewCell.m in Sources */,
 				ED64BDAD2418E78F0022D3C9 /* SearchView.m in Sources */,
 				ED64BE0B241A29A30022D3C9 /* TopicViewCell.m in Sources */,

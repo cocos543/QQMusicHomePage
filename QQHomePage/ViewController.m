@@ -17,6 +17,7 @@
 #import "TopicViewCell.h"
 #import "SongListCell.h"
 #import "MVListCell.h"
+#import "VipViewCell.h"
 
 #import "SDCycleScrollView.h"
 #import "UIImageView+WebCache.h"
@@ -296,24 +297,43 @@
         [cell.collectionView reloadData];
     };
     
-    // 第10 ~ 15 个section, 歌单
-    for (int i = 0; i < 5; i++) {
-        array = @[].mutableCopy;
-        [self.sections addObject:[TableViewSectionModel sectionWithCells:array]];
-        // 官方歌单, 歌单有两种高度, 单行标题是201, 双行标题221
-        TableViewCellModel *schoolSongListModel = [[TableViewCellModel alloc] init];
-        [array addObject:schoolSongListModel];
-        schoolSongListModel.height = 211;
-        schoolSongListModel.reuseIdentifier = @"SongListCell";
-        NSArray *schoolJson = [JsonLoader jsonObjsWithFileName:@"songlist16.json"];
-        schoolSongListModel.refreshBlock = ^(__kindof SongListCell * _Nonnull cell) {
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            cell.titleLabel.text = @"校园歌单";
-            [cell updateItemSize:CGSizeMake(115, 160)];
-            cell.listJson = schoolJson;
-            [cell.collectionView reloadData];
-        };
-    }
+    // 第10 个section, 歌单
+    array = @[].mutableCopy;
+    [self.sections addObject:[TableViewSectionModel sectionWithCells:array]];
+    // 官方歌单, 歌单有两种高度, 单行标题是201, 双行标题221
+    TableViewCellModel *schoolSongListModel = [[TableViewCellModel alloc] init];
+    [array addObject:schoolSongListModel];
+    schoolSongListModel.height = 211;
+    schoolSongListModel.reuseIdentifier = @"SongListCell";
+    NSArray *schoolJson = [JsonLoader jsonObjsWithFileName:@"songlist16.json"];
+    schoolSongListModel.refreshBlock = ^(__kindof SongListCell * _Nonnull cell) {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.titleLabel.text = @"校园歌单";
+        [cell updateItemSize:CGSizeMake(115, 160)];
+        cell.listJson = schoolJson;
+        [cell.collectionView reloadData];
+    };
+    
+    // 第11个section, VIP专区
+    array = @[].mutableCopy;
+    TableViewSectionModel *vipSec = [TableViewSectionModel sectionWithCells:array];
+    vipSec.footerHeight = 20;
+    [self.sections addObject:vipSec];
+    // 官方歌单, 歌单有两种高度, 单行标题是201, 双行标题221
+    TableViewCellModel *vipModel = [[TableViewCellModel alloc] init];
+    [array addObject:vipModel];
+    vipModel.height = 271;
+    vipModel.reuseIdentifier = @"VIPCell";
+    NSArray *vipJson = [JsonLoader jsonObjsWithFileName:@"viplist.json"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"VipViewCell" bundle:nil] forCellReuseIdentifier:vipModel.reuseIdentifier];
+    
+    vipModel.refreshBlock = ^(__kindof SongListCell * _Nonnull cell) {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.titleLabel.text = @"VIP专区";
+        [cell updateItemSize:CGSizeMake(360, 220)];
+        cell.listJson = vipJson;
+        [cell.collectionView reloadData];
+    };
     
 }
 

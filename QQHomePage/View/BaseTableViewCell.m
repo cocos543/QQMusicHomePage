@@ -20,4 +20,12 @@
     layout.itemSize = size;
 }
 
+#pragma mark - UICollectionViewDelegate, UICollectionViewDataSource
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.listJson.count;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
 @end

@@ -9,26 +9,26 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="221" id="gaQ-ps-m0L" customClass="MVListCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="221" id="uDk-ce-aVN" customClass="VipViewCell">
             <rect key="frame" x="0.0" y="0.0" width="373" height="221"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gaQ-ps-m0L" id="kIh-HR-s24">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uDk-ce-aVN" id="u2V-eZ-mhB">
                 <rect key="frame" x="0.0" y="0.0" width="373" height="221"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="piK-Vn-gn0">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHf-zR-I3S">
                         <rect key="frame" x="0.0" y="0.0" width="373" height="50"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="舞蹈专区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Duo-dU-ym4">
-                                <rect key="frame" x="20" y="14.5" width="69.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VIP专区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rO1-e6-BQQ">
+                                <rect key="frame" x="20" y="14.5" width="61.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0f7-9T-I22">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCQ-jG-ZvQ">
                                 <rect key="frame" x="293" y="17" width="60" height="16"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="wAA-W7-ZwV"/>
+                                    <constraint firstAttribute="width" constant="60" id="FZn-ct-2LF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <inset key="imageEdgeInsets" minX="53" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -39,42 +39,42 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Duo-dU-ym4" firstAttribute="centerY" secondItem="piK-Vn-gn0" secondAttribute="centerY" id="3qB-1o-D8C"/>
-                            <constraint firstAttribute="trailing" secondItem="0f7-9T-I22" secondAttribute="trailing" constant="20" id="CK0-Bj-Sk2"/>
-                            <constraint firstItem="0f7-9T-I22" firstAttribute="centerY" secondItem="piK-Vn-gn0" secondAttribute="centerY" id="Lmb-KJ-u5V"/>
-                            <constraint firstAttribute="height" constant="50" id="muO-JG-BWd"/>
-                            <constraint firstItem="Duo-dU-ym4" firstAttribute="leading" secondItem="piK-Vn-gn0" secondAttribute="leading" constant="20" id="uDr-ox-iHl"/>
+                            <constraint firstAttribute="height" constant="50" id="5Sd-dX-h0A"/>
+                            <constraint firstItem="rO1-e6-BQQ" firstAttribute="leading" secondItem="dHf-zR-I3S" secondAttribute="leading" constant="20" id="SxA-rb-w6z"/>
+                            <constraint firstAttribute="trailing" secondItem="hCQ-jG-ZvQ" secondAttribute="trailing" constant="20" id="ddT-2Y-dEp"/>
+                            <constraint firstItem="hCQ-jG-ZvQ" firstAttribute="centerY" secondItem="dHf-zR-I3S" secondAttribute="centerY" id="iBG-4S-TaL"/>
+                            <constraint firstItem="rO1-e6-BQQ" firstAttribute="centerY" secondItem="dHf-zR-I3S" secondAttribute="centerY" id="iHb-CQ-rnA"/>
                         </constraints>
                     </view>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vBf-AK-vZq">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0is-Ce-gdh">
                         <rect key="frame" x="0.0" y="50" width="373" height="171"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="10" id="D26-qd-NKr">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="10" id="pWg-q0-oae">
                             <size key="itemSize" width="230" height="160"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <connections>
-                            <outlet property="dataSource" destination="gaQ-ps-m0L" id="kJl-cO-LCm"/>
-                            <outlet property="delegate" destination="gaQ-ps-m0L" id="JLi-l3-x3o"/>
+                            <outlet property="dataSource" destination="uDk-ce-aVN" id="pgh-JN-Hei"/>
+                            <outlet property="delegate" destination="uDk-ce-aVN" id="msS-H0-CRs"/>
                         </connections>
                     </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="piK-Vn-gn0" firstAttribute="top" secondItem="kIh-HR-s24" secondAttribute="top" id="21R-DO-LY6"/>
-                    <constraint firstItem="vBf-AK-vZq" firstAttribute="top" secondItem="piK-Vn-gn0" secondAttribute="bottom" id="IGo-Xy-anK"/>
-                    <constraint firstAttribute="bottom" secondItem="vBf-AK-vZq" secondAttribute="bottom" id="S2H-nl-j3Q"/>
-                    <constraint firstItem="piK-Vn-gn0" firstAttribute="leading" secondItem="kIh-HR-s24" secondAttribute="leading" id="cat-5h-tGR"/>
-                    <constraint firstAttribute="trailing" secondItem="piK-Vn-gn0" secondAttribute="trailing" id="di1-0U-VGa"/>
-                    <constraint firstItem="vBf-AK-vZq" firstAttribute="leading" secondItem="kIh-HR-s24" secondAttribute="leading" id="jRr-zN-hmt"/>
-                    <constraint firstAttribute="trailing" secondItem="vBf-AK-vZq" secondAttribute="trailing" id="xex-dR-6GG"/>
+                    <constraint firstItem="0is-Ce-gdh" firstAttribute="leading" secondItem="u2V-eZ-mhB" secondAttribute="leading" id="GCQ-Pp-1UL"/>
+                    <constraint firstAttribute="trailing" secondItem="0is-Ce-gdh" secondAttribute="trailing" id="KJp-Dy-bNK"/>
+                    <constraint firstItem="dHf-zR-I3S" firstAttribute="leading" secondItem="u2V-eZ-mhB" secondAttribute="leading" id="N94-Vh-Yjs"/>
+                    <constraint firstAttribute="bottom" secondItem="0is-Ce-gdh" secondAttribute="bottom" id="TSm-dp-fgQ"/>
+                    <constraint firstItem="0is-Ce-gdh" firstAttribute="top" secondItem="dHf-zR-I3S" secondAttribute="bottom" id="n90-Ps-GsT"/>
+                    <constraint firstItem="dHf-zR-I3S" firstAttribute="top" secondItem="u2V-eZ-mhB" secondAttribute="top" id="u5R-JK-8UQ"/>
+                    <constraint firstAttribute="trailing" secondItem="dHf-zR-I3S" secondAttribute="trailing" id="xxo-L3-nVS"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="collectionView" destination="vBf-AK-vZq" id="K1i-D8-lia"/>
-                <outlet property="titleLabel" destination="Duo-dU-ym4" id="BOL-vs-L4O"/>
+                <outlet property="collectionView" destination="0is-Ce-gdh" id="Kcy-SG-VDw"/>
+                <outlet property="titleLabel" destination="rO1-e6-BQQ" id="aF6-Nm-Iqn"/>
             </connections>
             <point key="canvasLocation" x="-83.333333333333343" y="128.90625"/>
         </tableViewCell>
