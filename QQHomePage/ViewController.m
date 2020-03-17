@@ -261,6 +261,60 @@
         cell.listJson = mvJson;
         [cell.collectionView reloadData];
     };
+    
+    // 第8个section, 继续一个歌单
+    array = @[].mutableCopy;
+    [self.sections addObject:[TableViewSectionModel sectionWithCells:array]];
+    // 官方歌单, 歌单有两种高度, 单行标题是201, 双行标题221
+    TableViewCellModel *studySongListModel = [[TableViewCellModel alloc] init];
+    [array addObject:studySongListModel];
+    studySongListModel.height = 211;
+    studySongListModel.reuseIdentifier = @"SongListCell";
+    NSArray *studyJson = [JsonLoader jsonObjsWithFileName:@"songlist101.json"];
+    studySongListModel.refreshBlock = ^(__kindof SongListCell * _Nonnull cell) {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.titleLabel.text = @"学习歌单";
+        [cell updateItemSize:CGSizeMake(115, 160)];
+        cell.listJson = studyJson;
+        [cell.collectionView reloadData];
+    };
+    
+    // 第9个section, 视频专区
+    array = @[].mutableCopy;
+    [self.sections addObject:[TableViewSectionModel sectionWithCells:array]];
+    // 官方歌单, 歌单有两种高度, 单行标题是201, 双行标题221
+    TableViewCellModel *mv12ListModel = [[TableViewCellModel alloc] init];
+    [array addObject:mv12ListModel];
+    mv12ListModel.height = 231;
+    mv12ListModel.reuseIdentifier = @"MVListCell";
+    NSArray *mv12Json = [JsonLoader jsonObjsWithFileName:@"mvlist12.json"];
+    mv12ListModel.refreshBlock = ^(__kindof MVListCell * _Nonnull cell) {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.titleLabel.text = @"影视专区";
+        [cell updateItemSize:CGSizeMake(230, 160)];
+        cell.listJson = mv12Json;
+        [cell.collectionView reloadData];
+    };
+    
+    // 第10 ~ 15 个section, 歌单
+    for (int i = 0; i < 5; i++) {
+        array = @[].mutableCopy;
+        [self.sections addObject:[TableViewSectionModel sectionWithCells:array]];
+        // 官方歌单, 歌单有两种高度, 单行标题是201, 双行标题221
+        TableViewCellModel *schoolSongListModel = [[TableViewCellModel alloc] init];
+        [array addObject:schoolSongListModel];
+        schoolSongListModel.height = 211;
+        schoolSongListModel.reuseIdentifier = @"SongListCell";
+        NSArray *schoolJson = [JsonLoader jsonObjsWithFileName:@"songlist16.json"];
+        schoolSongListModel.refreshBlock = ^(__kindof SongListCell * _Nonnull cell) {
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.titleLabel.text = @"校园歌单";
+            [cell updateItemSize:CGSizeMake(115, 160)];
+            cell.listJson = schoolJson;
+            [cell.collectionView reloadData];
+        };
+    }
+    
 }
 
 #pragma mark UITableViewDataSource, UITableViewDelegate
