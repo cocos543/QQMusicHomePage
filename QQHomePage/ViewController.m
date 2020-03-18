@@ -127,6 +127,7 @@
         cell.selectionStyle  = UITableViewCellSelectionStyleNone;
         if (cell.contentView.subviews.count == 0) {
             SDCycleScrollView *view = [[SDCycleScrollView alloc] init];
+            view.autoScroll = NO;
             [cell.contentView addSubview:view];
             [view mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.leading.equalTo(cell.contentView).offset(10);

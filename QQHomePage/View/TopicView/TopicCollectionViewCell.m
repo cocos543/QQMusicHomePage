@@ -17,6 +17,7 @@
         self.layer.cornerRadius = 12.5;
         self.layer.masksToBounds = YES;
         
+        
         [self.contentView addSubview:self.titleLabel];
         [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.contentView);
