@@ -7,6 +7,13 @@
 //
 
 #import "TopicCollectionViewCell.h"
+#import "AsyncTopicView.h"
+
+@interface TopicCollectionViewCell ()
+
+@property (nonatomic, strong) AsyncTopicView *topicView;
+
+@end
 
 @implementation TopicCollectionViewCell
 
@@ -15,13 +22,12 @@
     if (self) {
         self.backgroundColor = [UIColor cc_stringToColor:@"#F1F2F3" opacity:1];
         self.layer.cornerRadius = 12.5;
-        self.layer.masksToBounds = YES;
-        
         
         [self.contentView addSubview:self.titleLabel];
         [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.contentView);
         }];
+
     }
     return self;
 }

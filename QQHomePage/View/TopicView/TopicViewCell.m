@@ -14,6 +14,11 @@
 
 @property (nonatomic, strong) NSArray *topics;
 
+/// 缓存标题尺寸
+@property (nonatomic, strong) NSMutableArray<NSValue *> *topicsSize;
+
+@property (nonatomic, strong) UIFont *titleFont;
+
 @end
 
 @implementation TopicViewCell
@@ -21,6 +26,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.titleFont = [UIFont systemFontOfSize:13];
         /// 这个cell比较简单, 里面就一个collection即可
         TopicWalterfallFlowLayout *layout = [[TopicWalterfallFlowLayout alloc] init];
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -53,6 +59,13 @@
     return _topics;
 }
 
+- (NSMutableArray<NSValue *> *)topicsSize {
+    if (!_topicsSize) {
+        _topicsSize = @[].mutableCopy;
+    }
+    return _topicsSize;
+}
+
 #pragma mark - TopicWalterfallFlowLayoutDataSource
 
 - (NSInteger)topicWalterFallItemRowNumber {
@@ -60,7 +73,11 @@
 }
 
 - (CGFloat)topicWalterFallItemContentWidthAtIndexPath:(NSIndexPath *)indexPath {
-    CGSize size = [self.topics[indexPath.item] sizeWithAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:13]}];
+    if (self.topicsSize.count >= indexPath.item + 1) {
+        return self.topicsSize[indexPath.item].CGSizeValue.width;
+    }
+    CGSize size = [self.topics[indexPath.item] sizeWithAttributes:@{NSFontAttributeName: self.titleFont}];
+    [self.topicsSize addObject:[NSValue valueWithCGSize:size]];
     return size.width + 15;
 }
 
@@ -76,6 +93,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     TopicCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     cell.titleLabel.text = self.topics[indexPath.item];
+    cell.titleLabel.font = self.titleFont;
     return cell;
 }
 

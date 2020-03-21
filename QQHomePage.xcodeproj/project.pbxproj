@@ -74,6 +74,10 @@
 		EDAC6ED5241F8E440086A081 /* MVCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDAC6ED3241F8E440086A081 /* MVCollectionViewCell.xib */; };
 		EDAC6ED8241F90BA0086A081 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDAC6ED7241F90BA0086A081 /* BaseTableViewCell.m */; };
 		EDAC6EDA241F954E0086A081 /* newmvlist.json in Resources */ = {isa = PBXBuildFile; fileRef = EDAC6ED9241F954E0086A081 /* newmvlist.json */; };
+		EDDB08902422249F007D1AAC /* AsyncTopicView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDB088F2422249F007D1AAC /* AsyncTopicView.m */; };
+		EDDB08992422251B007D1AAC /* YYAsyncLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDB08932422251B007D1AAC /* YYAsyncLayer.m */; };
+		EDDB089A2422251B007D1AAC /* YYSentinel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDB08952422251B007D1AAC /* YYSentinel.m */; };
+		EDDB089B2422251B007D1AAC /* YYTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDB08972422251B007D1AAC /* YYTransaction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -178,6 +182,14 @@
 		EDAC6ED6241F90BA0086A081 /* BaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
 		EDAC6ED7241F90BA0086A081 /* BaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
 		EDAC6ED9241F954E0086A081 /* newmvlist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = newmvlist.json; sourceTree = "<group>"; };
+		EDDB088E2422249F007D1AAC /* AsyncTopicView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncTopicView.h; sourceTree = "<group>"; };
+		EDDB088F2422249F007D1AAC /* AsyncTopicView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsyncTopicView.m; sourceTree = "<group>"; };
+		EDDB08932422251B007D1AAC /* YYAsyncLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYAsyncLayer.m; sourceTree = "<group>"; };
+		EDDB08942422251B007D1AAC /* YYTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTransaction.h; sourceTree = "<group>"; };
+		EDDB08952422251B007D1AAC /* YYSentinel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYSentinel.m; sourceTree = "<group>"; };
+		EDDB08962422251B007D1AAC /* YYAsyncLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYAsyncLayer.h; sourceTree = "<group>"; };
+		EDDB08972422251B007D1AAC /* YYTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTransaction.m; sourceTree = "<group>"; };
+		EDDB08982422251B007D1AAC /* YYSentinel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYSentinel.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +242,7 @@
 		ED44E14F2418BEA80063AB7B /* QQHomePage */ = {
 			isa = PBXGroup;
 			children = (
+				EDDB089124222507007D1AAC /* Lib */,
 				ED64BE56241F2EB30022D3C9 /* Data */,
 				ED64BDD62419D9550022D3C9 /* View */,
 				ED64BDCD2418F8810022D3C9 /* Resource */,
@@ -397,6 +410,8 @@
 				ED64BE0D241A2D160022D3C9 /* TopicCollectionViewCell.m */,
 				ED64BE16241A36430022D3C9 /* TopicWalterfallFlowLayout.h */,
 				ED64BE17241A36430022D3C9 /* TopicWalterfallFlowLayout.m */,
+				EDDB088E2422249F007D1AAC /* AsyncTopicView.h */,
+				EDDB088F2422249F007D1AAC /* AsyncTopicView.m */,
 			);
 			path = TopicView;
 			sourceTree = "<group>";
@@ -449,6 +464,27 @@
 				EDAC6ED3241F8E440086A081 /* MVCollectionViewCell.xib */,
 			);
 			path = MVList;
+			sourceTree = "<group>";
+		};
+		EDDB089124222507007D1AAC /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				EDDB08922422251B007D1AAC /* YYAsyncLayer */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		EDDB08922422251B007D1AAC /* YYAsyncLayer */ = {
+			isa = PBXGroup;
+			children = (
+				EDDB08962422251B007D1AAC /* YYAsyncLayer.h */,
+				EDDB08932422251B007D1AAC /* YYAsyncLayer.m */,
+				EDDB08942422251B007D1AAC /* YYTransaction.h */,
+				EDDB08972422251B007D1AAC /* YYTransaction.m */,
+				EDDB08982422251B007D1AAC /* YYSentinel.h */,
+				EDDB08952422251B007D1AAC /* YYSentinel.m */,
+			);
+			path = YYAsyncLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -581,6 +617,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED64BDC02418ECAD0022D3C9 /* UIView+SDExtension.m in Sources */,
+				EDDB089A2422251B007D1AAC /* YYSentinel.m in Sources */,
 				ED64BE11241A2E3A0022D3C9 /* UILabel+Utility.m in Sources */,
 				EDAC6ECF241F8DC60086A081 /* MVListCell.m in Sources */,
 				ED64BDC52418ECAD0022D3C9 /* TAAbstractDotView.m in Sources */,
@@ -597,10 +634,13 @@
 				EDAC6ED8241F90BA0086A081 /* BaseTableViewCell.m in Sources */,
 				ED64BDAD2418E78F0022D3C9 /* SearchView.m in Sources */,
 				ED64BE0B241A29A30022D3C9 /* TopicViewCell.m in Sources */,
+				EDDB08902422249F007D1AAC /* AsyncTopicView.m in Sources */,
 				ED64BE59241F2ECC0022D3C9 /* JsonLoader.m in Sources */,
+				EDDB089B2422251B007D1AAC /* YYTransaction.m in Sources */,
 				ED64BDC32418ECAD0022D3C9 /* TAPageControl.m in Sources */,
 				ED64BE0E241A2D160022D3C9 /* TopicCollectionViewCell.m in Sources */,
 				ED64BE03241A1AE00022D3C9 /* NewSongView.m in Sources */,
+				EDDB08992422251B007D1AAC /* YYAsyncLayer.m in Sources */,
 				ED64BE4C241F17270022D3C9 /* SongListCell.m in Sources */,
 				EDAC6ED4241F8E440086A081 /* MVCollectionViewCell.m in Sources */,
 				ED64BDA72418CCB70022D3C9 /* SceneDelegate.m in Sources */,
