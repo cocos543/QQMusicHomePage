@@ -28,7 +28,8 @@
     SongCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     NSDictionary *dic = self.listJson[indexPath.item];
     
-    [cell.imgV sd_setImageWithURL:[NSURL URLWithString:dic[@"imgurl"]]];
+    [cell.imgV setImageURL:[NSURL URLWithString:dic[@"imgurl"]]];
+    cell.imgV.asyncCornerRadius = 10.f;
     cell.titleLabel.text = dic[@"dissname"];
     return cell;
 }

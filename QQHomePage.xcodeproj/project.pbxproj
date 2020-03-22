@@ -78,6 +78,7 @@
 		EDDB08992422251B007D1AAC /* YYAsyncLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDB08932422251B007D1AAC /* YYAsyncLayer.m */; };
 		EDDB089A2422251B007D1AAC /* YYSentinel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDB08952422251B007D1AAC /* YYSentinel.m */; };
 		EDDB089B2422251B007D1AAC /* YYTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDB08972422251B007D1AAC /* YYTransaction.m */; };
+		EDDB08A024265046007D1AAC /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDB089F24265046007D1AAC /* AsyncImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -190,6 +191,8 @@
 		EDDB08962422251B007D1AAC /* YYAsyncLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYAsyncLayer.h; sourceTree = "<group>"; };
 		EDDB08972422251B007D1AAC /* YYTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTransaction.m; sourceTree = "<group>"; };
 		EDDB08982422251B007D1AAC /* YYSentinel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYSentinel.h; sourceTree = "<group>"; };
+		EDDB089E24265046007D1AAC /* AsyncImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		EDDB089F24265046007D1AAC /* AsyncImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -368,6 +371,8 @@
 				ED64BE12241A2F370022D3C9 /* UIColor+CCUtility.m */,
 				EDAC6ED6241F90BA0086A081 /* BaseTableViewCell.h */,
 				EDAC6ED7241F90BA0086A081 /* BaseTableViewCell.m */,
+				EDDB089E24265046007D1AAC /* AsyncImageView.h */,
+				EDDB089F24265046007D1AAC /* AsyncImageView.m */,
 				ED63F5A62420B65E00DB0387 /* VipVIew */,
 				EDAC6ECB241F8DA10086A081 /* MVList */,
 				ED64BE46241F16C70022D3C9 /* SongList */,
@@ -622,6 +627,7 @@
 				EDAC6ECF241F8DC60086A081 /* MVListCell.m in Sources */,
 				ED64BDC52418ECAD0022D3C9 /* TAAbstractDotView.m in Sources */,
 				ED63F5AF2420B74700DB0387 /* VIP1CollectionViewCell.m in Sources */,
+				EDDB08A024265046007D1AAC /* AsyncImageView.m in Sources */,
 				ED64BDC22418ECAD0022D3C9 /* TADotView.m in Sources */,
 				ED44E1582418BEA80063AB7B /* ViewController.m in Sources */,
 				ED64BDBF2418ECAD0022D3C9 /* SDCycleScrollView.m in Sources */,

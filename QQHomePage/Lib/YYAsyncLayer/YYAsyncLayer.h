@@ -2,6 +2,9 @@
 //  YYAsyncLayer.h
 //  YYKit <https://github.com/ibireme/YYKit>
 //
+//  原来的代码有一些问题, 因为默认layer的contentsScale在创建之后就会被UIView设置1, 这就导致默认创建的CGContext的scale是1.
+//  使用的时候需要注意要自己重新设置好正确的scale, 可以在UIView的initWithFrame或者initWithCoder方法中, 调用super之后设置
+//
 //  Created by ibireme on 15/4/11.
 //  Copyright (c) 2015 ibireme.
 //
@@ -35,6 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface YYAsyncLayer : CALayer
 /// Whether the render code is executed in background. Default is YES.
 @property BOOL displaysAsynchronously;
+
 @end
 
 

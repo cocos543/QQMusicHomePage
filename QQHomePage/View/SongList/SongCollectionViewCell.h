@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AsyncImageView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SongCollectionViewCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIView *maskV;
-@property (weak, nonatomic) IBOutlet UIImageView *imgV;
+@property (weak, nonatomic) IBOutlet AsyncImageView *imgV;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *listenNumLabel;
 
