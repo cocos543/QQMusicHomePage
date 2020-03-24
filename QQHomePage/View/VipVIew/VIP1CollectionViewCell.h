@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AsyncImageView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,11 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
-@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *imgViewArr;
+@property (strong, nonatomic) IBOutletCollection(AsyncImageView) NSArray *imgViewArr;
+
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *itemsTitleArr;
 
 /// 覆盖整个视图的背景图片
-@property (weak, nonatomic) IBOutlet UIImageView *bigImgView;
+@property (weak, nonatomic) IBOutlet AsyncImageView *bigImgView;
 
 @end
 

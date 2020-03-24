@@ -31,6 +31,7 @@
     [cell.imgV setImageURL:[NSURL URLWithString:dic[@"imgurl"]]];
     cell.imgV.asyncCornerRadius = 10.f;
     cell.titleLabel.text = dic[@"dissname"];
+    cell.imgV.drawMask = YES;
     return cell;
 }
 

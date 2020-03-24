@@ -7,16 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AsyncImageView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MVCollectionViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *imgV;
+@property (weak, nonatomic) IBOutlet AsyncImageView *imgV;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 
-@property (weak, nonatomic) IBOutlet UIImageView *iconV;
+@property (weak, nonatomic) IBOutlet AsyncImageView *iconV;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end

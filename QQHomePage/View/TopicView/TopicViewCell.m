@@ -48,6 +48,7 @@
             make.trailing.equalTo(self.contentView).offset(0);
             make.top.bottom.equalTo(self.contentView);
         }];
+        
     }
     return self;
 }

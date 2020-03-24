@@ -29,9 +29,13 @@
     MVCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     NSDictionary *dic = self.listJson[indexPath.item];
     
-    [cell.imgV sd_setImageWithURL:[NSURL URLWithString:dic[@"picurl"]]];
+    [cell.imgV setImageURL:[NSURL URLWithString:dic[@"picurl"]]];
+    cell.imgV.asyncCornerRadius = 10.f;
+    cell.imgV.drawMask = YES;
+    
     cell.titleLabel.text = dic[@"title"];
-    [cell.iconV sd_setImageWithURL:[NSURL URLWithString:dic[@"singers"][0][@"picurl"]]];
+    [cell.iconV setImageURL:[NSURL URLWithString:dic[@"singers"][0][@"picurl"]]];
+    cell.iconV.asyncCornerRadius = cell.iconV.frame.size.width / 2;
     cell.nameLabel.text = dic[@"singers"][0][@"name"];
     return cell;
 }
