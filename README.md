@@ -1,6 +1,6 @@
 # 文档更新说明
 * 最后更新 2020年03月22日
-* 首次更新 2020年03月26日
+* 首次更新 2020年03月27日
 
 # 前言
 　　现在的iPhone性能越来越好, 正常开发一个界面都很少会遇到影响体验的卡顿. 但是如果把APP放到比较老的型号上, 卡顿就非常常见了. 利用这篇文章, 结合一下实际的案例QQ音乐首页, 聊一聊解决卡顿的基本思想和方法论.
@@ -319,8 +319,140 @@ iPhone6 Plus的GPU确实不怎么好, 圆角一多占有率飙升到90%了. 结�
 
 ### CPU的几种常见优化思路
 
+在优化之前, 可以用Instruments工具里的Time Profiler时间分析工具, 很方便查看各行代码的CPU执行时间.
+
+常见的CPU优化指导思想, 总结起来大概就是这两点, 
+
+1. 时间不阔绰, 任务提前做, 就是**预处理**
+2. 大事化小, 小事化了, 就是**拆分任务**
+
+具体到编码上, 有下面几种方法
+
+1. 文件资源提前加载, 就是**预加载**
+2. 取消自动布局, 提前计算视图frame, 就是**预排版**
+3. 提前缓存像素图, 供下次直接使用, 就是**预渲染**
+4. 空间换时间, 就是**缓存**, 预渲染也属于缓存的一种.
+4. 限制线程数, 就是**并发控制**
+6. 代码布局, 放弃xib, StoryBoard,  就是**很麻烦**
+
+
+保持界面流畅, 还要时刻注意不要在主线程上做太多事情, 主线程每一帧只有16.67ms.
+
+此外应该还有其他, 比如对象的释放放到后台队列(这个在**YYAsyncLayer**里面可以看到**YYAsyncLayerGetReleaseQueue**), 其他的暂时想不到了.
+
 ### 开始优化 v2.0
+
+有了指导思想, 下面开始用Time Profiler找一下哪些任务占用较多CPU资源, 如果能预处理的, 就先预处理. 
+
+预处理的时候, 多利用runloop提供的观察者模式, 尽量把预处理的代码放到runloop即将休眠的时候处理, 而且每次只处理一个任务, 把任务拆分成多个子任务处理,  尽量避免在一帧的时间内做太多事情.
+
+先关闭FPS视图, 避免Timer干扰分析.
+
+运行程序
+<div align=center>
+　　<img src="http://blog.cocosdever.com/images/qq-music-start-main.jpg" width=40% /><img src="http://blog.cocosdever.com/images/qq-music-start-worker.jpg" width=40% />
+</div>
+
+
+ 从程序启动后了1秒左右的时间里, 可以看到消耗CPU的地方几种在下面几个.
+ 
+ 1. 主线程主要工作量在TableViewCell和CollectionViewCell的加载
+ 2. 非主线程主要工作量是**AsyncImageView**的CPU渲染, **SDImageCache**的图片加载
+
+<div align=center>
+　　<img src="http://blog.cocosdever.com/images/qq-music-xib-load.jpg" width=30% /><img src="http://blog.cocosdever.com/images/qq-music-cgcontext-draw.jpg" width=30% /><img src="http://blog.cocosdever.com/images/qq-music-decode-image.jpg" width=30% />
+</div>
+
+通过Time Profiler的代码分析功能, 可以轻松看到具体的代码细节, 其中`SongListCell`中的UICollectionViewCell的xib文件的加载消耗26ms.
+
+一个线程中的**AsyncImageView**的图片绘制占用了149ms, 阴影绘制占用了36ms.
+
+一个线程中的**SDImageCache**缓存加载主要是在图片解码的地方, 消耗了119ms.
+
+可以看出来, 首页消耗CPU的地方就是加载xib文件和图片解码, CPU渲染图片, 因为Dome比较简单, 所以这个情况是符合预期的.
+
+图片解码这块已经使用了**SDWebImage**这个框架, 他把解码操作放到非主线程了, 如果要加载的图片是在磁盘中有的, 加载后在一个串行IO队列中解码, 这个不会有线程爆炸问题. 如果图片在磁盘没有的, 需要联网下载的, 下载和解码的逻辑被放到下载队列中执行, 最大并发数是6, 所以**SDWebImage**针对当前这个Demo来说, 不会有线程问题.
+
+``` objc
+_ioQueue = dispatch_queue_create("com.hackemist.SDWebImageCache", DISPATCH_QUEUE_SERIAL);
+
+_downloadQueue = [NSOperationQueue new];
+_downloadQueue.maxConcurrentOperationCount = _config.maxConcurrentDownloads; // 默认是6
+_downloadQueue.name = @"com.hackemist.SDWebImageDownloader";
+```
+
+上线滚动和左右滚动, 都可以看到性能消耗的地方主要是对**AsyncImageView**的渲染. 滚动时加载Cell后会设置URL, 而AsyncImageView只要被设置了URL, 马上开始圆角Image的渲染, 同一个图片来回滚动会被重复渲染, 所以这个地方可以优化一下.
+
+思路就是把URL作为key, 渲染出圆角的图片作为value, 一起保存到内存中. 同时在得到圆角的value后, 还要把**SDWebImage**从内存缓存里的相同URL的图片删除, 避免原图和圆角图同时存在内容, 浪费内存空间.
+
+关于缓存类的选择, 我在**NSCache**, **YYCache**, **SDMemoryCache**中, 选择了**SDMemoryCache**. 原因就是这里暂时不需要追求极致性能, **SDMemoryCache**比较适合缓存图片.
+
+创建内存缓存对象**AsyncImageCache**, 继承自**SDMemoryCache**, **SDMemoryCache**继承自**NSCache**, 它除了提供系统的缓存功能之外, 还特别适合缓存图片.
+
+这是因为**SDMemoryCache**内部定义了一个**NSMapTable**类型的weakCache, MapTable支持对值弱引用, 这样做的好处就是如果系统发起内存警告时, 父类NSCache会把缓存释放掉, 这样用户从缓存里获取图片的时候, 如果在weakCache里还存在图片的话,  说明图片还显示在屏幕上, 这时候直接把屏幕上的图片写入缓存并返回即可, 效率更高.
+
+``` objc
+- (void)setImageURL:(NSURL *)imageURL {
+    _imageURL = imageURL;
+
+    UIImage *cacheImage = [AsyncImageCache.shareCache objectForKey:imageURL.absoluteString];
+    if (cacheImage) {
+        self.layer.contents = (id)cacheImage.CGImage;
+    } else {
+        __weak __typeof(self) wself = self;
+        [SDWebImageManager.sharedManager loadImageWithURL:imageURL options:0 progress:nil completed:^(UIImage *_Nullable image, NSData *_Nullable data, NSError *_Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL *_Nullable imageURL) {
+            if (!error) {
+                wself.image = image;
+                [wself.layer setNeedsDisplay];
+            }
+        }];
+    }
+}
+
+- (YYAsyncLayerDisplayTask *)newAsyncDisplayTask {
+    // 在主线程访问bounds属性
+    CGRect bounds = self.bounds;
+
+    YYAsyncLayerDisplayTask *task = [YYAsyncLayerDisplayTask new];
+
+    task.willDisplay = ^(CALayer *layer) {};
+
+    task.display     =  略
+
+    task.didDisplay = ^(CALayer *layer, BOOL finished) {
+        if (finished) {
+            UIImage *image = [UIImage imageWithCGImage:(__bridge CGImageRef)layer.contents];
+            [AsyncImageCache.shareCache setObject:image forKey:self.imageURL.absoluteString];
+
+            [SDWebImageManager.sharedManager.imageCache removeImageForKey:self.imageURL.absoluteString cacheType:SDImageCacheTypeMemory completion:nil];
+        }
+    };
+
+    return task;
+}
+```
+
+缓存好已渲染的图片后, 现在滚动时CPU基本保持在20%以下了. 界面相比之前更流畅了, 偶尔会有轻微卡顿.
+<div align=center>
+　　<img src="http://blog.cocosdever.com/images/qq-music-cache-image.jpg" width=60% />
+</div>
+
+这个版本的代码, 可以看 `tag v2.1`
+
+# CPU的其他优化
+
+其他优化, 比如把xib布局换成代码布局, 而且取消自动布局, 直接手动计算frame的大小, 再缓存好, 这样就不用在滚动的时候让CPU去计算了.
+
+另外也可以考虑一下提前拉取首页图片的数据, 先渲染好并缓存起来, 这样滚动的时候就不需要再去计算了.
+
+上面说的这些预处理预渲染, 可以使用**YYTransaction**这个对象, 里面封装好了runloop观察者, 在runloop快要休眠的时候, 一次性处理已经提交到静态`transactionSet`集合的**YYTransaction**对象.
+
+当然也可以自己注册观察者, 然后弄一个队列, 每次runloop要休眠的时候就执行一下队头一个任务即可.
+
+这些篇幅有限精力优先, 我就不做了, 本文如有错误, 还请指正谢谢.
 
 
 # 参考文章
 [关于iOS离屏渲染的深入研究](https://zhuanlan.zhihu.com/p/72653360)
+[保持界面流畅的技巧](https://blog.ibireme.com/2015/11/12/smooth_user_interfaces_for_ios/)
+
