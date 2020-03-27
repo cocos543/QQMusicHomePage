@@ -63,11 +63,6 @@
     [self createCellModel];
 
     [self.tableView reloadData];
-    
-//    AsyncImageView *view = [[AsyncImageView alloc] initWithFrame:CGRectMake(0, 50, 150, 150)];
-//    view.asyncCornerRadius = 25;
-//    view.imageURL = [NSURL URLWithString:@"http://p.qpic.cn/music_cover/1kicVrMEg0Fn1TyQ2yOZs3ZTp9gyvcRfy9QkvwLicuJIa2E5jGCyibiazA/600?n=1"];
-//    [self.view addSubview:view];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

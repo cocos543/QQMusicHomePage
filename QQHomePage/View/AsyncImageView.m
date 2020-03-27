@@ -8,6 +8,8 @@
 
 #import "AsyncImageView.h"
 #import "YYAsyncLayer.h"
+#import "AsyncImageCache.h"
+
 #import <SDWebImageManager.h>
 
 @interface AsyncImageView () {
@@ -47,20 +49,26 @@
 
 - (void)initialize {
     self.layer.contentsScale = UIScreen.mainScreen.scale;
-    
+
     [self setMaskColors:@[[UIColor colorWithRed:0 green:0 blue:0 alpha:0.1],
-    [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4]]];
+                          [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4]]];
 }
 
 - (void)setImageURL:(NSURL *)imageURL {
     _imageURL = imageURL;
 
-    __weak __typeof(self) wself = self;
-
-    [SDWebImageManager.sharedManager downloadImageWithURL:imageURL options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-        wself.image = image;
-        [wself.layer setNeedsDisplay];
-    }];
+    UIImage *cacheImage = [AsyncImageCache.shareCache objectForKey:imageURL.absoluteString];
+    if (cacheImage) {
+        self.layer.contents = (id)cacheImage.CGImage;
+    } else {
+        __weak __typeof(self) wself = self;
+        [SDWebImageManager.sharedManager loadImageWithURL:imageURL options:0 progress:nil completed:^(UIImage *_Nullable image, NSData *_Nullable data, NSError *_Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL *_Nullable imageURL) {
+            if (!error) {
+                wself.image = image;
+                [wself.layer setNeedsDisplay];
+            }
+        }];
+    }
 }
 
 - (void)setImage:(UIImage *)image {
@@ -68,16 +76,14 @@
     [self.layer setNeedsDisplay];
 }
 
-
 - (void)setMaskColors:(NSArray *)maskColors {
-
     _maskColors = maskColors;
     if (_colors) {
         free(_colors);
         _colors = NULL;
     }
-    
-    _colors     = malloc(sizeof(CGFloat) * _maskColors.count * 4);
+
+    _colors = malloc(sizeof(CGFloat) * _maskColors.count * 4);
     for (int i = 0; i < _maskColors.count; i++) {
         UIColor *color = _maskColors[i];
         const CGFloat *components = CGColorGetComponents(color.CGColor);
@@ -111,10 +117,9 @@
 - (YYAsyncLayerDisplayTask *)newAsyncDisplayTask {
     // 在主线程访问bounds属性
     CGRect bounds = self.bounds;
-    
-    
+
     YYAsyncLayerDisplayTask *task = [YYAsyncLayerDisplayTask new];
-    
+
     task.willDisplay = ^(CALayer *layer) {};
 
     task.display     = ^(CGContextRef context, CGSize size, BOOL (^isCancelled)(void)) {
@@ -132,7 +137,7 @@
         CGContextRestoreGState(context);
 
         if (self.drawMask) {
-            CGColorSpaceRef rgb = CGColorSpaceCreateDeviceRGB();
+            CGColorSpaceRef rgb    = CGColorSpaceCreateDeviceRGB();
 
             CGGradientRef gradient = CGGradientCreateWithColorComponents(rgb, self->_colors, NULL, self.maskColors.count);
             CGContextDrawLinearGradient(context, gradient, CGPointMake(size.width / 2, 0), CGPointMake(size.width / 2, size.height), 0);
@@ -141,7 +146,14 @@
         }
     };
 
-    task.didDisplay = ^(CALayer *layer, BOOL finished) {};
+    task.didDisplay = ^(CALayer *layer, BOOL finished) {
+        if (finished) {
+            UIImage *image = [UIImage imageWithCGImage:(__bridge CGImageRef)layer.contents];
+            [AsyncImageCache.shareCache setObject:image forKey:self.imageURL.absoluteString];
+
+            [SDWebImageManager.sharedManager.imageCache removeImageForKey:self.imageURL.absoluteString cacheType:SDImageCacheTypeMemory completion:nil];
+        }
+    };
 
     return task;
 }
