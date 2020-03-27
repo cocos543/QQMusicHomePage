@@ -2,15 +2,15 @@ PODS:
   - CCEasyKVO (0.1.0)
   - LHPerformanceStatusBar (0.1.0)
   - Masonry (1.1.0)
-  - SDWebImage (3.8.3):
-    - SDWebImage/Core (= 3.8.3)
-  - SDWebImage/Core (3.8.3)
+  - SDWebImage (5.6.1):
+    - SDWebImage/Core (= 5.6.1)
+  - SDWebImage/Core (5.6.1)
 
 DEPENDENCIES:
   - CCEasyKVO
   - LHPerformanceStatusBar
   - Masonry
-  - SDWebImage (~> 3.7)
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
@@ -23,8 +23,8 @@ SPEC CHECKSUMS:
   CCEasyKVO: 1aae5d892be60f07b9e5a3591008a4bd3b07a93e
   LHPerformanceStatusBar: 068e2e40ccfac5be9c8ca2c1545daad92fb9b366
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  SDWebImage: a72e880a8fe0f7fc31efe15aaed443c074d2a80c
+  SDWebImage: 7edb9c3ea661e77a66661f7f044de8c1b55d1120
 
-PODFILE CHECKSUM: 8ab2693a7f623268daf2a3a05999038bd650754a
+PODFILE CHECKSUM: 9deefeaa3df23c9b4d2d63a8943b191b743aff0c
 
 COCOAPODS: 1.9.0.beta.2

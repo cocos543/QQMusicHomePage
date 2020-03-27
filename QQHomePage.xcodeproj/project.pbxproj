@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3B093DFBDE095E79DBF81F06 /* libPods-QQHomePage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C2524F9A44B09D9C719F21 /* libPods-QQHomePage.a */; };
+		ED259F7B242E1681002CD22C /* AsyncImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = ED259F7A242E1681002CD22C /* AsyncImageCache.m */; };
 		ED44E1522418BEA80063AB7B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED44E1512418BEA80063AB7B /* AppDelegate.m */; };
 		ED44E1582418BEA80063AB7B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED44E1572418BEA80063AB7B /* ViewController.m */; };
 		ED44E15B2418BEA80063AB7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED44E1592418BEA80063AB7B /* Main.storyboard */; };
@@ -85,6 +86,8 @@
 		2CFFE4910BFD5844310263F1 /* Pods-QQHomePage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQHomePage.debug.xcconfig"; path = "Target Support Files/Pods-QQHomePage/Pods-QQHomePage.debug.xcconfig"; sourceTree = "<group>"; };
 		54C2524F9A44B09D9C719F21 /* libPods-QQHomePage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QQHomePage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B81CACEE8D9F1E97A30460BD /* Pods-QQHomePage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQHomePage.release.xcconfig"; path = "Target Support Files/Pods-QQHomePage/Pods-QQHomePage.release.xcconfig"; sourceTree = "<group>"; };
+		ED259F79242E1681002CD22C /* AsyncImageCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncImageCache.h; sourceTree = "<group>"; };
+		ED259F7A242E1681002CD22C /* AsyncImageCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsyncImageCache.m; sourceTree = "<group>"; };
 		ED44E14D2418BEA80063AB7B /* QQHomePage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQHomePage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED44E1502418BEA80063AB7B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ED44E1512418BEA80063AB7B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -224,6 +227,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		ED259F78242E165B002CD22C /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				ED259F79242E1681002CD22C /* AsyncImageCache.h */,
+				ED259F7A242E1681002CD22C /* AsyncImageCache.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		ED44E1442418BEA80063AB7B = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +257,7 @@
 		ED44E14F2418BEA80063AB7B /* QQHomePage */ = {
 			isa = PBXGroup;
 			children = (
+				ED259F78242E165B002CD22C /* Tools */,
 				EDDB089124222507007D1AAC /* Lib */,
 				ED64BE56241F2EB30022D3C9 /* Data */,
 				ED64BDD62419D9550022D3C9 /* View */,
@@ -622,6 +635,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED64BDC02418ECAD0022D3C9 /* UIView+SDExtension.m in Sources */,
+				ED259F7B242E1681002CD22C /* AsyncImageCache.m in Sources */,
 				EDDB089A2422251B007D1AAC /* YYSentinel.m in Sources */,
 				ED64BE11241A2E3A0022D3C9 /* UILabel+Utility.m in Sources */,
 				EDAC6ECF241F8DC60086A081 /* MVListCell.m in Sources */,
