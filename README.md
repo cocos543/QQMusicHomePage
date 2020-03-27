@@ -32,7 +32,7 @@
 至于其他的能支持横向滚动并且复用视图的组件, 这东西我个人认为, 只有系统提供的视图无法优化到满意的情况下, 再去造轮子或者用新轮子, 要看看额外做的工作和得到的收益是不是值得.
 　　
 <div align=center>
-　　<img src="http://blog.cocosdever.com/images/qq-music-ui-structure.png" width=30% />
+　　<img src="http://blog.cocosdever.com/images/qq-music-ui-structure.jpg" width=30% />
 </div>
 
 ## 布局方式
@@ -78,7 +78,7 @@ QQ音乐的搜索框会随着页面向上移动而移动, 但是页面向下移�
 往下的可以横向滚动的视图都用UICollectionView实现, 其中分为多种不同的Cell. QQ音乐首页的Cell种类是后台配置的, 我这里只挑选其中几种实现, 其他的都是一样的道理.
 
 <div align=center>
-　　<img src="http://blog.cocosdever.com/images/qq-music-song-list.png" width=30% /><img src="http://blog.cocosdever.com/images/qq-music-movie.png" width=30% /><img src="http://blog.cocosdever.com/images/qq-music-vip.png" width=30% />
+　　<img src="http://blog.cocosdever.com/images/qq-music-song-list.jpg" width=30% /><img src="http://blog.cocosdever.com/images/qq-music-movie.jpg" width=30% /><img src="http://blog.cocosdever.com/images/qq-music-vip.jpg" width=30% />
 </div>
 
 其中歌单的Cell, 因为要在图片上显示白色的文本, 所以我在图片上加了一个灰色渐变蒙版, 这样底部的数字看起来才会清晰. 不然遇到白色图片文字就看不清了. 另外两个Cell也是同理 不过截图没体现出来. 这些圆角都使用下面两行代码搞定
